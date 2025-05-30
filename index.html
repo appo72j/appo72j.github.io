@@ -2,47 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Página Web</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      background: #f2f2f2;
-    }
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-top: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      color: #555;
-      max-width: 600px;
-      margin: auto;
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-      img {
-        width: 120px;
-        height: 120px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis Torres - Portafolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav>
+      <h1>Luis Torres</h1>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <img src="tu-foto.jpg" alt="Mi Foto" />
-  <h1>Hola, soy Luis Alfredo</h1>
-  <p>Bienvenido a mi página web. Aquí compartiré mis proyectos, conocimientos en sistemas teleinformáticos, y cómo voy creciendo paso a paso en este mundo de la tecnología.</p>
+  <main>
+    <section class="hero">
+      <h2>Hola, soy Luis</h2>
+      <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología y el desarrollo web.</p>
+      <a href="contacto.html" class="btn">Contáctame</a>
+    </section>
+  </main>
 
+  <footer>
+    <p>&copy; 2025 Luis Torres. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
