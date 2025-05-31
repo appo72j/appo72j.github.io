@@ -5,347 +5,237 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luis Torres - Portafolio</title>
 
+  <!-- SEO Básico -->
+  <meta name="description" content="Portafolio profesional de Luis Torres, técnico en sistemas teleinformáticos. Conoce sus habilidades, proyectos y contáctalo fácilmente.">
+  <meta name="keywords" content="Luis Torres, Portafolio, Técnico, Sistemas, HTML, CSS, GitHub, SENA, Desarrollo Web">
+  <meta name="author" content="Luis Torres" />
+
   <!-- Bootstrap 5.3 y Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Fuente Roboto de Google Fonts -->
+  <!-- Fuente Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset y base */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #f8f9fa;
       color: #212529;
-      padding-top: 56px; /* altura navbar */
+      padding-top: 56px;
       scroll-behavior: smooth;
     }
 
-    /* Navbar custom */
     .navbar-custom {
       background-color: #222;
       box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-      font-weight: 500;
     }
-    .navbar-custom .navbar-brand,
-    .navbar-custom .nav-link {
+
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
       color: #fff;
       transition: color 0.3s ease;
     }
+
     .navbar-custom .nav-link:hover,
-    .navbar-custom .nav-link:focus,
     .navbar-custom .nav-link.active {
       color: #1e90ff;
       text-decoration: underline;
     }
-    .navbar-toggler {
-      border: none;
-      color: #fff;
-    }
 
-    /* Contenedor principal */
-    main.container {
-      max-width: 900px;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      margin-bottom: 3rem;
-      text-align: center;
-    }
-
-    /* Foto de perfil */
     .profile-pic {
       width: 180px;
       height: 180px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid #222;
-      margin-bottom: 1.5rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-    .profile-pic:hover,
-    .profile-pic:focus {
-      transform: scale(1.05);
-      outline: none;
+      margin-bottom: 20px;
     }
 
-    /* Botón personalizado */
     .btn-primary-custom {
       background-color: #222;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 6px;
-      font-weight: 600;
+      color: #fff;
       border: none;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
       transition: background-color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-    .btn-primary-custom:hover,
-    .btn-primary-custom:focus {
-      background-color: #1e90ff;
-      color: white;
-      outline: none;
-      text-decoration: none;
-      box-shadow: 0 0 8px rgba(30,144,255,0.7);
     }
 
-    /* Redes sociales */
-    .social-icons {
-      margin-top: 2rem;
+    .btn-primary-custom:hover {
+      background-color: #1e90ff;
     }
+
     .social-icons a {
-      margin: 0 15px;
-      font-size: 2rem;
-      color: #222;
-      transition: color 0.3s ease;
+      font-size: 1.8rem;
+      margin: 0 10px;
+      transition: opacity 0.3s ease;
     }
+
     .social-icons a[href*="wa.me"] { color: #25D366; }
     .social-icons a[href*="facebook.com"] { color: #1877F2; }
     .social-icons a[href*="instagram.com"] { color: #E1306C; }
-    .social-icons a:hover,
-    .social-icons a:focus {
-      opacity: 0.8;
-      outline: none;
-    }
+    .social-icons a[href*="mailto"] { color: #D44638; }
 
-    /* Sección de habilidades y proyectos */
-    section h3 {
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #222;
-      font-weight: 600;
-      font-size: 1.75rem;
-    }
-    ul.skills-list,
-    ul.projects-list {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      padding-left: 1.25rem;
-      text-align: left;
-      line-height: 1.6;
-      color: #444;
-      font-size: 1.1rem;
-    }
+    .social-icons a:hover { opacity: 0.8; }
 
-    /* Hoja de vida botón */
-    .btn-cv {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      display: inline-block;
-      margin: 1rem auto 3rem auto;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .btn-cv:hover,
-    .btn-cv:focus {
-      background-color: #45a049;
-      transform: scale(1.05);
-      outline: none;
-    }
-
-    /* Galería */
-    .gallery {
-      max-width: 900px;
-      margin: 0 auto 4rem auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
     .gallery img {
       width: 100%;
       max-width: 250px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover,
-    .gallery img:focus {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      outline: none;
+      transition: transform 0.3s ease;
     }
 
-    /* Scroll to top button */
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
     #btnUp {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      display: none;
       background-color: #007BFF;
       border: none;
-      padding: 14px;
+      padding: 12px;
       border-radius: 50%;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      z-index: 1100;
-    }
-    #btnUp:hover,
-    #btnUp:focus {
-      background-color: #0056b3;
-      transform: scale(1.1);
-      outline: none;
+      display: none;
+      z-index: 999;
     }
 
-    /* Footer */
     footer {
-      background-color: #222;
+      background: #222;
       color: white;
       text-align: center;
-      padding: 1rem 0;
-      user-select: none;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+      padding: 1rem;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 576px) {
-      main.container {
-        padding: 1.5rem 1rem;
-      }
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-      }
-      .social-icons a {
-        margin: 0 10px;
-        font-size: 1.7rem;
-      }
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+
+    form .form-control {
+      margin-bottom: 1rem;
+    }
+
+    .btn-cv {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .btn-cv:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" aria-label="Navegación principal">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Luis Torres</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Alternar navegación">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarContenido">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
 
-<main class="container" role="main">
-  <img src="tu-foto.jpg" alt="Foto de perfil de Luis Torres" class="profile-pic" tabindex="0" />
+<main class="container text-center mt-5">
+  <img src="tu-foto.jpg" alt="Foto de perfil de Luis Torres" class="profile-pic">
   <h1>Hola, soy Luis Torres</h1>
   <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas.</p>
   <a href="#contacto" class="btn-primary-custom">Contáctame</a>
 
-  <section class="social-icons" id="contacto" aria-label="Redes sociales">
-    <a href="https://wa.me/573507673599" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.facebook.com/share/16cWoEho1A/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
-      <i class="fab fa-facebook" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.instagram.com/luistorredt?igsh=bXZ1MTNveDV0amN2" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
-      <i class="fab fa-instagram" aria-hidden="true"></i>
-    </a>
-  </section>
+  <div class="social-icons mt-4" id="contacto">
+    <a href="https://wa.me/573507673599" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/share/16cWoEho1A/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/luistorredt?igsh=bXZ1MTNveDV0amN2" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:lac2004t@gmail.com" title="Correo Gmail"><i class="fas fa-envelope"></i></a>
+  </div>
 </main>
 
-<section aria-labelledby="skills-title" style="max-width:900px; margin: 0 auto;">
-  <h3 id="skills-title">Habilidades</h3>
-  <ul class="skills-list">
+<section class="container mt-5">
+  <h3>Habilidades</h3>
+  <ul>
     <li>HTML, CSS y JavaScript</li>
     <li>Mantenimiento y reparación de computadores</li>
     <li>Instalación de software y sistemas operativos</li>
     <li>Redes básicas y configuración de routers</li>
     <li>Uso de herramientas de línea de comandos (Termux, Git)</li>
   </ul>
-</section>
 
-<section aria-labelledby="projects-title" style="max-width:900px; margin: 0 auto;">
-  <h3 id="projects-title">Proyectos</h3>
-  <ul class="projects-list">
+  <h3 class="mt-4">Proyectos</h3>
+  <ul>
     <li><strong>Portafolio Web Personal:</strong> Sitio profesional creado desde el celular con HTML, CSS y GitHub Pages.</li>
     <li><strong>Mantenimiento Técnico:</strong> Servicio de formateo, instalación y limpieza de equipos para usuarios locales.</li>
     <li><strong>Red local doméstica:</strong> Configuración de red para una familia de 5 dispositivos, usando módem y router.</li>
   </ul>
+
+  <h3 class="mt-4">📄 Hoja de Vida</h3>
+  <a href="HOJA_DE_VIDA_LUIS_TORRE.pdf" class="btn-cv" download>📄 Descargar Hoja de Vida (PDF)</a>
 </section>
 
-<section aria-label="Hoja de vida" style="text-align:center;">
-  <h3>📄 Hoja de Vida</h3>
-  <a href="HOJA_DE_VIDA_LUIS_TORRE.pdf" download class="btn-cv" aria-label="Descargar Hoja de Vida en formato PDF">
-    📄 Descargar Hoja de Vida (PDF)
-  </a>
+<section class="container mt-5">
+  <h3>Formulario de Contacto</h3>
+  <form action="mailto:lac2004t@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="Nombre" class="form-control" placeholder="Tu nombre" required>
+    <input type="email" name="Correo" class="form-control" placeholder="Tu correo" required>
+    <textarea name="Mensaje" rows="5" class="form-control" placeholder="Escribe tu mensaje" required></textarea>
+    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+  </form>
 </section>
 
-<section aria-labelledby="gallery-title" style="max-width:900px; margin: 0 auto;">
-  <h3 id="gallery-title" style="text-align:center;">Galería de Trabajo en el SENA</h3>
-  <div class="gallery" role="list">
-    <img src="img/foto1.jpg" alt="Trabajo 1" tabindex="0" role="listitem" />
-    <img src="img/foto2.jpg" alt="Trabajo 2" tabindex="0" role="listitem" />
-    <img src="img/foto3.jpg" alt="Trabajo 3" tabindex="0" role="listitem" />
-    <img src="img/foto4.jpg" alt="Trabajo 4" tabindex="0" role="listitem" />
-    <img src="img/foto5.jpg" alt="Trabajo 5" tabindex="0" role="listitem" />
-    <img src="img/foto6.jpg" alt="Trabajo 6" tabindex="0" role="listitem" />
-    <img src="img/foto7.jpg" alt="Trabajo 7" tabindex="0" role="listitem" />
+<section class="container mt-5">
+  <h3>Galería de Trabajo en el SENA</h3>
+  <div class="row row-cols-1 row-cols-md-3 g-4 gallery">
+    <img src="img/foto1.jpg" alt="Trabajo 1">
+    <img src="img/foto2.jpg" alt="Trabajo 2">
+    <img src="img/foto3.jpg" alt="Trabajo 3">
+    <img src="img/foto4.jpg" alt="Trabajo 4">
+    <img src="img/foto5.jpg" alt="Trabajo 5">
+    <img src="img/foto6.jpg" alt="Trabajo 6">
+    <img src="img/foto7.jpg" alt="Trabajo 7">
   </div>
 </section>
 
-<!-- Botón Volver arriba -->
-<button id="btnUp" aria-label="Volver arriba" title="Volver arriba" type="button">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-       width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-    <line x1="12" y1="19" x2="12" y2="5"/>
-    <polyline points="5 12 12 5 19 12"/>
-  </svg>
+<button id="btnUp" title="Volver arriba" aria-label="Volver arriba">
+  <i class="fas fa-arrow-up text-white"></i>
 </button>
 
-<footer>
+<footer class="mt-5">
   © 2025 Luis Torres. Todos los derechos reservados.
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-  const btnUp = document.getElementById('btnUp');
-
+  const btn = document.getElementById('btnUp');
   window.addEventListener('scroll', () => {
-    btnUp.style.display = window.scrollY > 200 ? 'block' : 'none';
+    btn.style.display = window.scrollY > 200 ? 'block' : 'none';
   });
-
-  btnUp.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  btnUp.addEventListener('mouseenter', () => {
-    btnUp.style.backgroundColor = '#0056b3';
-    btnUp.style.transform = 'scale(1.1)';
-  });
-  btnUp.addEventListener('mouseleave', () => {
-    btnUp.style.backgroundColor = '#007BFF';
-    btnUp.style.transform = 'scale(1)';
   });
 </script>
 
 </body>
 </html>
+
