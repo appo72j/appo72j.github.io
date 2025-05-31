@@ -163,6 +163,57 @@
   <img src="img/foto7.jpg" alt="Trabajo 7" style="width: 100%; max-width: 250px; border-radius: 10px;" />
 </div>
 </div>
+<!-- Botón Volver arriba -->
+<button id="btnUp" 
+  style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: #007BFF;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+  "
+  aria-label="Volver arriba"
+  title="Volver arriba"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+       width="24" height="24" viewBox="0 0 24 24" >
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('btnUp');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+
+  btn.addEventListener('mouseenter', () => {
+    btn.style.backgroundColor = '#0056b3';
+    btn.style.transform = 'scale(1.1)';
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.backgroundColor = '#007BFF';
+    btn.style.transform = 'scale(1)';
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
   <footer>
     © 2025 Luis Torres. Todos los derechos reservados.
   </footer>
