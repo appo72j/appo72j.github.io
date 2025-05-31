@@ -11,6 +11,10 @@
 
 
 <style>
+
+body {
+  padding-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+}
 /* Fuente y reset básico */
 body {
   margin: 0;
@@ -208,20 +212,72 @@ footer {
 
   </header>
 
-  <div class="container">
-    <img src="tu-foto.jpg" alt="Luis Torres" class="profile-pic" />
-    <h2>Hola, soy Luis Torres</h2>
-    <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas informáticos.</p>
-    <a href="#contacto" class="btn">Contáctame</a>
+<style>
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    <div class="social-icons" id="contacto">
-      <a href="https://wa.me/573507673599" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/share/16cWoEho1A/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/luistorredt?igsh=bXZ1MTNveDV0amN2" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>  
+  /* Íconos sociales con colores y efecto */
+  .social-icons {
+    margin-top: 25px;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 1.8em;
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  /* Colores base según la red social */
+  .social-icons a[href*="wa.me"] {
+    color: #25D366; /* verde WhatsApp */
+  }
+
+  .social-icons a[href*="facebook.com"] {
+    color: #1877F2; /* azul Facebook */
+  }
+
+  .social-icons a[href*="instagram.com"] {
+    color: #E1306C; /* rosa Instagram */
+  }
+
+  /* Efecto hover sutil */
+  .social-icons a:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<div class="container">
+  <img src="tu-foto.jpg" alt="Luis Torres" class="profile-pic" />
+  <h2>Hola, soy Luis Torres</h2>
+  <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas informáticos.</p>
+  <a href="#contacto" class="btn">Contáctame</a>
+
+  <div class="social-icons" id="contacto">
+    <a href="https://wa.me/573507673599" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/share/16cWoEho1A/" target="_blank" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/luistorredt?igsh=bXZ1MTNveDV0amN2" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+
 <hr style="margin: 40px 0; width: 100%;">
-
 <h3>Habilidades</h3>
 <ul style="text-align: left;">
   <li>HTML, CSS y JavaScript</li>
