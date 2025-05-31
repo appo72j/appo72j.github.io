@@ -2,55 +2,126 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luis Torres - Portafolio Profesional</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luis Torres - Portafolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #222;
+    }
+
+    .btn {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: #222;
+      margin: 0 10px;
+      font-size: 1.8em;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
+    <h1>Luis Torres</h1>
     <nav>
-      <h1>Luis Torres</h1>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
+      <a href="#">Inicio</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="tu-foto.jpg" alt="Foto de Luis Torres" class="perfil">
-      <h2>Hola, soy Luis Torres</h2>
-      <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas informáticos.</p>
-      <a href="contacto.html" class="btn">Contáctame</a>
-    </section>
+  <div class="container">
+    <img src="foto.jpg" alt="Luis Torres" class="profile-pic" />
+    <h2>Hola, soy Luis Torres</h2>
+    <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas informáticos.</p>
+    <a href="#contacto" class="btn">Contáctame</a>
 
-    <section class="sobre-mi">
-      <h3>Sobre mí</h3>
-      <p>Soy una persona comprometida, responsable y con muchas ganas de aprender. Actualmente estudio en el SENA para convertirme en un excelente técnico en sistemas teleinformáticos. Mi objetivo es aportar soluciones tecnológicas efectivas y eficientes en cualquier empresa o proyecto donde participe.</p>
-    </section>
-
-    <section class="habilidades">
-      <h3>Habilidades</h3>
-      <ul>
-        <li>Instalación y mantenimiento de hardware y software</li>
-        <li>Desarrollo web (HTML, CSS, JavaScript)</li>
-        <li>Manejo de sistemas operativos (Windows, Linux)</li>
-        <li>Trabajo en equipo y comunicación efectiva</li>
-        <li>Uso de herramientas como Termux y GitHub</li>
-      </ul>
-    </section>
-
-    <section class="proyectos">
-      <h3>Proyectos</h3>
-      <p>Actualmente estoy desarrollando mi portafolio profesional como parte de mi proyecto productivo en el SENA. También he trabajado en pequeñas páginas web y soluciones básicas para usuarios que necesitan soporte técnico.</p>
-    </section>
-  </main>
+    <div class="social-icons" id="contacto">
+      <a href="https://wa.me/573001112233" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://facebook.com/tuusuario" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/tuusuario" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Luis Torres. Todos los derechos reservados.</p>
+    © 2025 Luis Torres. Todos los derechos reservados.
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
