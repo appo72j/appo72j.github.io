@@ -1,190 +1,173 @@
-<!DOCTYPE html>
+k<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Luis Torres - Portafolio</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
+  <!-- Bootstrap y Font Awesome corregidos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      padding-top: 60px; /* espacio para que el menú fijo no tape contenido */
+    }
 
-<style>
+    .navbar {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      background-color: #222;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
 
-body {
-  padding-top: 70px; /* Ajusta este valor según la altura de tu navbar */
-}
-/* Fuente y reset básico */
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  padding-top: 60px; /* espacio para que el menú fijo no tape contenido */
-}
+    .navbar-brand {
+      font-size: 1rem;
+      color: white;
+      margin-left: 20px;
+      user-select: none;
+    }
 
-/* Ajustes para el menú */
-.navbar {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  background-color: #222;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px; /* Menú compacto */
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #1e90ff;
+      outline: none;
+      text-decoration: underline;
+    }
 
-.navbar-brand {
-  font-size: 1rem;
-  color: white;
-  margin-left: 20px;
-  user-select: none;
-}
+    .navbar-toggler {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      color: white;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
 
-.nav-link {
-  font-size: 0.9rem;
-  padding: 0.4rem 0.7rem;
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-  transition: color 0.3s ease;
-}
+    .galeria-img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: #1e90ff;
-  outline: none;
-  text-decoration: underline;
-}
+    .galeria-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
 
-.navbar-toggler {
-  font-size: 1rem;
-  padding: 0.25rem 0.5rem;
-  color: white;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-/* Imágenes de galería */
-.galeria-img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #222;
+    }
 
-.galeria-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
+    .btn {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
 
-/* Contenedor principal */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+    .btn:hover,
+    .btn:focus {
+      background-color: #1e90ff;
+      outline: none;
+    }
 
-/* Foto de perfil */
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  border: 4px solid #222;
-}
+    .social-icons {
+      margin-top: 25px;
+    }
 
-/* Botón */
-.btn {
-  background-color: #222;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
+    .social-icons a {
+      color: #222;
+      margin: 0 10px;
+      font-size: 1.8em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-.btn:hover,
-.btn:focus {
-  background-color: #1e90ff;
-  outline: none;
-}
+    .social-icons a:hover,
+    .social-icons a:focus {
+      color: #1e90ff;
+      outline: none;
+    }
 
-/* Iconos sociales */
-.social-icons {
-  margin-top: 25px;
-}
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      user-select: none;
+    }
 
-.social-icons a {
-  color: #222;
-  margin: 0 10px;
-  font-size: 1.8em;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
 
-.social-icons a:hover,
-.social-icons a:focus {
-  color: #1e90ff;
-  outline: none;
-}
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
 
-/* Footer */
-footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  user-select: none;
-}
+      .navbar {
+        height: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    margin: 20px;
-    padding: 20px;
-  }
-8
-  .profile-pic {
-    width: 140px;
-    height: 140px;
-  }
+      .navbar-brand {
+        font-size: 0.9rem;
+        margin-left: 10px;
+      }
 
-  .navbar {
-    height: 45px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+      .nav-link {
+        font-size: 0.8rem;
+        margin-right: 10px;
+        padding: 0.3rem 0.5rem;
+      }
+    }
 
-  .navbar-brand {
-    font-size: 0.9rem;
-    margin-left: 10px;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    margin-right: 10px;
-    padding: 0.3rem 0.5rem;
-  }
-}
+    /* Redes sociales con color */
+    .social-icons a[href*="wa.me"] { color: #25D366; }
+    .social-icons a[href*="facebook.com"] { color: #1877F2; }
+    .social-icons a[href*="instagram.com"] { color: #E1306C; }
+    .social-icons a:hover { opacity: 0.8; }
   </style>
 </head>
 <body>
@@ -193,7 +176,7 @@ footer {
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Luis Torres</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarContenido">
@@ -210,56 +193,10 @@ footer {
   </nav>
 </header>
 
-<style>
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* Íconos sociales con colores y efecto */
-  .social-icons {
-    margin-top: 25px;
-  }
-
-  .social-icons a {
-    margin: 0 10px;
-    font-size: 1.8em;
-    text-decoration: none;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
-  }
-
-  /* Colores base según la red social */
-  .social-icons a[href*="wa.me"] {
-    color: #25D366; /* verde WhatsApp */
-  }
-
-  .social-icons a[href*="facebook.com"] {
-    color: #1877F2; /* azul Facebook */
-  }
-
-  .social-icons a[href*="instagram.com"] {
-    color: #E1306C; /* rosa Instagram */
-  }
-
-  /* Efecto hover sutil */
-  .social-icons a:hover {
-    opacity: 0.8;
-  }
-</style>
-
 <div class="container">
   <img src="tu-foto.jpg" alt="Luis Torres" class="profile-pic" />
   <h2>Hola, soy Luis Torres</h2>
-  <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas informáticos.</p>
+  <p>Técnico en Sistemas Teleinformáticos en formación. Apasionado por la tecnología, el desarrollo web y los sistemas.</p>
   <a href="#contacto" class="btn">Contáctame</a>
 
   <div class="social-icons" id="contacto">
@@ -307,6 +244,7 @@ footer {
     📄 Descargar Hoja de Vida (PDF)
   </a>
 </div>
+
 <hr style="margin: 40px 0; width: 100%;">
 <h3 style="text-align: center;">Galería de Trabajo en el SENA</h3>
 <div style="
@@ -316,7 +254,7 @@ footer {
   justify-items: center;
   padding: 10px;
 ">
- <img src="img/foto1.jpg" alt="Trabajo 1" class="galeria-img" />
+  <img src="img/foto1.jpg" alt="Trabajo 1" class="galeria-img" />
   <img src="img/foto2.jpg" alt="Trabajo 2" class="galeria-img" />
   <img src="img/foto3.jpg" alt="Trabajo 3" class="galeria-img" />
   <img src="img/foto4.jpg" alt="Trabajo 4" class="galeria-img" />
@@ -324,10 +262,9 @@ footer {
   <img src="img/foto6.jpg" alt="Trabajo 6" class="galeria-img" />
   <img src="img/foto7.jpg" alt="Trabajo 7" class="galeria-img" />
 </div>
-</div>
-</div>
+
 <!-- Botón Volver arriba -->
-<button id="btnUp" 
+<button id="btnUp"
   style="
     position: fixed;
     bottom: 30px;
@@ -345,8 +282,8 @@ footer {
   aria-label="Volver arriba"
   title="Volver arriba"
 >
-  <svg xmlns="http://www.w3.org/2000/svg" 
-       fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+  <svg xmlns="http://www.w3.org/2000/svg"
+       fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
        width="24" height="24" viewBox="0 0 24 24" >
     <line x1="12" y1="19" x2="12" y2="5"/>
     <polyline points="5 12 12 5 19 12"/>
@@ -355,15 +292,9 @@ footer {
 
 <script>
   const btn = document.getElementById('btnUp');
-
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
+    btn.style.display = window.scrollY > 200 ? 'block' : 'none';
   });
-
   btn.addEventListener('mouseenter', () => {
     btn.style.backgroundColor = '#0056b3';
     btn.style.transform = 'scale(1.1)';
@@ -372,15 +303,16 @@ footer {
     btn.style.backgroundColor = '#007BFF';
     btn.style.transform = 'scale(1)';
   });
-
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
-  <footer>
-    © 2025 Luis Torres. Todos los derechos reservados.
-  </footer>
+
+<footer>
+  © 2025 Luis Torres. Todos los derechos reservados.
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
