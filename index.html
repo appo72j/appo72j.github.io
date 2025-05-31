@@ -11,156 +11,176 @@
 
 
 <style>
-
-body {
-  padding-top: 60px; /* espacio para que el menú no tape nada */
-}
-
-.navbar {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-}
-
-.navbar-brand {
-  font-size: 1.1rem;
-}
-
-.nav-link {
-  font-size: 0.95rem;
-  padding: 0.4rem 0.8rem;
-}
-
-.navbar-toggler {
-  font-size: 1rem;
-  padding: 0.25rem 0.5rem;
-}
-
-
-  .galeria-img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .galeria-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  }
-</style>
-<!-- Tipografía profesional Roboto desde Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<style>
-
-/* Estilo para que el contenido no quede tapado */
-body {
-  padding-top: 70px; /* Ajusta según el alto real del menú */
-}
-
-/* Ajustes para que el menú no sea muy grande */
-.navbar {
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-}
-
-.navbar-brand {
-  font-size: 1rem;
-}
-
-.nav-link {
-  font-size: 0.9rem;
-  padding: 0.4rem 0.7rem;
-}
-
+/* Fuente y reset básico */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f8f9fa;
   color: #333;
-  padding-top: 60px; /* Para que el menú no tape el contenido */
+  padding-top: 60px; /* espacio para que el menú fijo no tape contenido */
 }
 
-    header {
-      background-color: #222;
-      color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Ajustes para el menú */
+.navbar {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background-color: #222;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px; /* Menú compacto */
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
-    }
+.navbar-brand {
+  font-size: 1rem;
+  color: white;
+  margin-left: 20px;
+  user-select: none;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+.nav-link {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+.nav-link:hover,
+.nav-link:focus {
+  color: #1e90ff;
+  outline: none;
+  text-decoration: underline;
+}
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 4px solid #222;
-    }
+.navbar-toggler {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
-    .btn {
-      background-color: #222;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 15px;
-    }
+/* Imágenes de galería */
+.galeria-img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .social-icons {
-      margin-top: 25px;
-    }
+.galeria-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-    .social-icons a {
-      color: #222;
-      margin: 0 10px;
-      font-size: 1.8em;
-      text-decoration: none;
-    }
+/* Contenedor principal */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
+/* Foto de perfil */
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #222;
+}
 
-    @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 20px;
-      }
+/* Botón */
+.btn {
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
 
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-      }
-    }
+.btn:hover,
+.btn:focus {
+  background-color: #1e90ff;
+  outline: none;
+}
+
+/* Iconos sociales */
+.social-icons {
+  margin-top: 25px;
+}
+
+.social-icons a {
+  color: #222;
+  margin: 0 10px;
+  font-size: 1.8em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+  color: #1e90ff;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .navbar {
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar-brand {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    margin-right: 10px;
+    padding: 0.3rem 0.5rem;
+  }
+}
   </style>
 </head>
 <body>
